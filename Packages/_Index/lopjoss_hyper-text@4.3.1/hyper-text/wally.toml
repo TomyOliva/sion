@@ -1,0 +1,18 @@
+[package]
+name = "lopjoss/hyper-text"
+description = "A typed Luau rich-text renderer for Roblox"
+version = "4.3.1"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+include = [
+    "wally.toml",
+    "default.project.json",
+    "src",
+    "src/HyperText",
+    "src/HyperText/**",
+]
+exclude = ["**"]
+
+[dependencies]
+Memoizer = "lopjoss/memoizer@1.4.6"
+Signal = "lopjoss/signal@1.0.0"
