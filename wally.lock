@@ -7,7 +7,7 @@ name = "audio-cv/sion"
 version = "0.1.0"
 dependencies = [
 	["HyperText", "lopjoss/hyper-text@4.3.1"],
-	["Lapis", "nezuo/lapis@0.3.4"],
+	["lapis", "nezuo/lapis@0.3.4"],
 ]
 
 [[package]]
