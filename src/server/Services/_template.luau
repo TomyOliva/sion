@@ -3,14 +3,14 @@ local Framework = require(ReplicatedStorage.Shared.Framework)
 
 -- local OtroService = Framework.Use("OtroService")
 
-local NombreService = {}
+local template = {}
 
-NombreService.Priority = 0
+template.Priority = 0
 
-function NombreService:Init() 
+function template:Init()
+    warn("init template server")
 end
 
-function NombreService:Start() 
+function template:Start()
+    warn("start template server")
 end
-
-return NombreService

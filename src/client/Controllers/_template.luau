@@ -3,14 +3,16 @@ local Framework = require(ReplicatedStorage.Shared.Framework)
 
 -- local Global = Framework.Use("Global")
 
-local NombreController = {}
+local template = {}
 
-NombreController.Priority = 0
+template.Priority = 0
 
-function NombreController:Init() 
+function template:Init()
+    warn("init template client")
 end
 
-function NombreController:Start() 
+function template:Start()
+    warn("start template client")
 end
 
-return NombreController
+return template
