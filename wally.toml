@@ -6,6 +6,4 @@ realm = "shared"
 
 [dependencies]
 HyperText = "lopjoss/hyper-text@4.3.1"
-
-[server-dependencies]
 lapis = "nezuo/lapis@0.3.4"
