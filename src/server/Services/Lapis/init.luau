@@ -13,29 +13,23 @@ local documents = {}
 --// Methods
 local collection = Lapis.createCollection("PlayerData", {
 	defaultData = DEFAULT_DATA,
-	-- You can use t by osyrisrblx to type check your data at runtime.
 	validate = t.strictInterface({ coins = t.integer }),
 })
 
 local function onPlayerAdded(player: Player)
-	-- The second argument associates the document with the player's UserId which is useful
-	-- for GDPR compliance.
 	collection
 		:load(`Player{player.UserId}`, { player.UserId })
 		:andThen(function(document)
 			if player.Parent == nil then
-				-- The player might have left before the document finished loading.
-				-- The document needs to be closed because PlayerRemoving won't fire at this point.
 				document:close():catch(warn)
 				return
 			end
 
 			documents[player] = document
+			warn("documents:", documents)
 		end)
 		:catch(function(message)
 			warn(`Player {player.Name}'s data failed to load: {message}`)
-
-			-- Optionally, you can kick the player when their data fails to load:
 			player:Kick("Data failed to load.")
 		end)
 end
@@ -43,7 +37,6 @@ end
 local function onPlayerRemoving(player: Player)
 	local document = documents[player]
 
-	-- The document won't be added to the dictionary if PlayerRemoving fires bofore it finishes loading.
 	if document ~= nil then
 		documents[player] = nil
 		document:close():catch(warn)
