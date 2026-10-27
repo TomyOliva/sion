@@ -1,0 +1,5 @@
+return {
+    ["User"] = {},
+    ["Inventory"] = {},
+    ["Statistics"] = {},
+}
