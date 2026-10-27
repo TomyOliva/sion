@@ -1,4 +1,3 @@
---!strict
 local Loader = {}
 
 type Module = {
