@@ -1,5 +1,0 @@
-return {
-    ["User"] = {},
-    ["Inventory"] = {},
-    ["Statistics"] = {},
-}
